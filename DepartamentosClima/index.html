@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>departamentos</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+   
+
+</head>
+<body>  
+    
+    <h3>clima en Los departamentos de El Salvador</h3>
+    <select class="form-select" aria-label="Default select example" id="selector" onchange="seleccionar(this)">
+        <option >seleciona el departamento</option>
+        <option value="morazan">Morazán</option>
+        <option value="san miguel">San Miguel</option>
+        <option value="san salvador">San Salvador</option>
+        <option value="san vicente">San Vicente</option>
+        <option value="santa ana">Santa Ana</option>
+        <option value="sonsonate">Sonsonate</option>
+        <option value="usulutan">Usulután</option>
+        <option value="ahuachapan">Ahuachapán</option>
+        <option value="cabañas">Cabañas</option>
+        <option value="chalatenango">Chalatenango</option>
+        <option value="Cuscatlán">Cuscatlán</option>
+        <option value="la libertad">La Libertad</option>
+        <option value="la paz">La Paz</option>
+        <option value="la union">La Unión</option>
+        
+            
+    </select>
+    
+    <br>
+    <br>
+
+    <div id="contenedor">
+        <div id="caja1">
+            <h1 id="temperatura-valor"></h1>
+            <h1 id="temperatura-descripcion"></h1>
+        </div>
+        <div id="caja2">
+            <h2 id="ubicacion"></h2>
+          
+            <img src="" alt=""  height="150px" height="200px" id="img">
+        </div>
+        <div id="caja3">
+            <h3>Veloc. del Viento</h3>
+            <h1 id="viento-velocidad"></h1>
+        </div>
+        <div id="caja4">
+            <h3>latitud</h3>
+            <h3 id="lat"></h3>
+            <h3>longitud</h3>
+            <h3 id="log"></h3>
+
+        </div>
+        <div id="caja5">
+            <h3>humidad</h3>
+            <h3 id="humedad"></h3>
+            <h3>presion</h3>
+            <h3 id="presion"></h3>
+        </div>
+          <div id="caja6">
+            <h3>temp_max</h3>
+            <h3 id="temMax"></h3>
+            <h3>temp_min</h3>
+            <h3 id="tempMin"></h3>
+
+
+        </div>
+
+    </div>
+    <script src="appp.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>
