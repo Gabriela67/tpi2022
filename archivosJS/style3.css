@@ -1,0 +1,44 @@
+body{
+   
+    background-color: #9FC9F3;
+    overflow: hidden;
+  
+}
+.sol{
+    position: relative;
+    top: 20px;
+    left:1000px ;
+    width: 10em;
+    height: 10em;
+    background-color: yellow;
+    border-radius: 50%;
+   
+
+
+}
+
+.arbol{
+    
+        width: 0px;
+        height: 0px;
+        border-right: 200px solid transparent;
+        border-top: 200px solid transparent;
+        border-left: 200px solid transparent;
+        border-bottom: 200px solid green;
+     
+        
+   
+}
+.arbol2{
+    position: relative;
+    top: -400px;
+    left: 400px;
+    width: 0px;
+    height: 0px;
+    border-right: 200px solid transparent;
+    border-top: 200px solid transparent;
+    border-left: 200px solid transparent;
+    border-bottom: 200px solid green;
+    
+
+}
