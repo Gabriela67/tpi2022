@@ -1,0 +1,98 @@
+ paso 1 : instalar Composer nota:tenemos que instalar php antes
+
+https://getcomposer.org/download/
+
+Download and run ***Composer-Setup.exe*** - it will install the latest composer version whenever it is executed.
+
+
+paso 2: verificar si esta instalado
+en la terminal 
+
+composer -V
+
+paso 3: instalar laravel
+
+composer create-project laravel/laravel=9 nombre documento --prefer-dist 
+
+
+---------------------------------------------------------------------------
+
+instalar axios 
+
+npm init -y
+npm i axios
+
+php artisan migrate:refresh --seed para semprar las semillas de los datos falsos en la base de datos 
+
+ https://github.com/Gaby-04/ParcialPrueba3 link de github con clientes en laravel 
+https://github.com/Gabriela67/practicaParcial3Tpi link del parcial con mvc 
+_________________________________________________________________________________________________________
+el archivo de los usuarios creado con mvc 
+http://localhost/usuarioss/?controller=Users&action=showUsers <--- para abrir el documento en el buscador y mostrar todo los usuarios
+http://localhost/usuarioss/?controller=Users&action=showUsers&id=2 <--- para mostrar con el id en especifico 
+https://github.com/Gabriela67/practicaParcial3Tpi
+__________________________________________________________________________________________________________
+---------------------------------------------
+66710880 
+php artisan make:controller CustomerController --resource  // crear un archivo controller
+
+DIRECTIVAS DE LARAVEL 
+
+
+@yield('nombre del segmento de codigo') remplaza algo que tiene con codigo html en una seccion y lo pone en blade
+@extends('nombre de donde hereda')
+@section('nombre de la seccion') es una seccion de codigo donde se puede remplazar en aun lugar y se remplaza con @yield
+@stop -> cierre de la section 
+
+///clase 2 con laavel
+ ASI SE AGREGA UN CONTROLADOR A UNA VISTA 
+
+Route::controller(CustomerController::class)->group(function () {
+    Route::get('Customer', 'index')->name('index.Customer');
+   
+});
+
+FUNCION PARA TRAER TODO LOS CLIENTES DE LA BASE DE DATOS 
+
+    public function index()
+    {
+        $clientes = Cliente::latest()->get();
+        return view('clientes')->with('clientes', $clientes);
+    }
+wed ---> en wed  Route::get('/clientes', 'index')->name('clientes.index');
+ mostrar elementos 
+
+ @foreach($clientes as $cliente)
+        <td><li> <a href="{{route('cliente.one',$cliente->id)}}">{{$cliente->nombre}}</a></li>
+        <td>{{$cliente->apellido}} </td>
+        <td>{{$cliente->edad}}</td>
+    </tr>
+        @endforeach
+///FUNCION PARA MOSTRAR UN SOLO CLIENTE 
+
+ public function cliente(Cliente $cliente){
+        return view("cliente")->with('cliente',$cliente);
+
+    }
+wed---> Route::get('/clientes/{cliente}',"cliente")->name('cliente.one');
+blade -->
+@section('Cliente')
+<h1>Cliente: {{$cliente->nombre}} </h1>
+<table border=1px >
+    <tr>
+        <th>id</th>
+        <th>nombre</th>
+        <th>apellido</th>
+        <th>edad</th>
+    </tr>
+    <tr>
+        <td>{{$cliente->id}}</td>
+        <td>{{$cliente->nombre}}</td>
+        <td>{{$cliente->apellido}}</td>
+        <td>{{$cliente->edad}}</td>
+        
+    </tr>
+
+
+
+
